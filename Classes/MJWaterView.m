@@ -61,19 +61,23 @@
 /// 绘制波浪
 - (void)drawWave
 {
+    if (_cycle <= 0 && _height <= 0) {
+        return;
+    }
+    
     CGFloat width = self.bounds.size.width;     // 整体宽
     CGFloat height = self.bounds.size.height;   // 整体高
     
+    // 周期宽度模式
+    CGFloat cycleWidth = _widthOneCycle? width: 180.0;
     // 周期常数(1个单位，代表一整个周期)
-    CGFloat cycleConstant = (M_PI / 180.0) * 2;
-    
-    // 周期
-    CGFloat cycle = _cycle * cycleConstant;
+    CGFloat cycleConstant = (M_PI / cycleWidth) * 2;
+
     // 初始偏移
-    CGFloat earlyOffset = _earlyCycle * cycleConstant * width;
-    // 计算偏移
-    _offset += _speed * cycleConstant;
- 
+    CGFloat earlyOffset = _earlyCycle * cycleConstant * cycleWidth;
+    // 计算偏移（1秒60帧，所以1秒移动60个点）
+    _offset += (_waveDisplaylink? _speed: 0) * cycleConstant;
+
     // 路径
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, nil, 0, 0);
@@ -81,7 +85,7 @@
     CGFloat y = 0.0f;
     // 计算每个点，加到路径中
     for (CGFloat x = 0; x <= width; x++) {
-        y = _height * sinf(cycle * x + earlyOffset + _offset) + self.topSpace;
+        y = _height * sinf(_cycle * cycleConstant * x + earlyOffset + _offset) + self.topSpace;
         CGPathAddLineToPoint(path, nil, x, y);
     }
     
@@ -126,10 +130,9 @@
     [self drawWave];
 }
 
-- (void)setSpeed:(CGFloat)speed
+- (void)setWidthOneCycle:(BOOL)widthOneCycle
 {
-    _speed = speed;
+    _widthOneCycle = widthOneCycle;
     [self drawWave];
 }
-
 @end

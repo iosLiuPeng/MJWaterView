@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83h-DZ-Z9b" userLabel="Water1" customClass="MJWaterView">
-                                <rect key="frame" x="19" y="72.5" width="225" height="129.5"/>
+                                <rect key="frame" x="19" y="72.5" width="281" height="129.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="height">
@@ -32,7 +32,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="earlyCycle">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="speed">
                                         <real key="value" value="0.0"/>
@@ -40,6 +40,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.0" green="0.99143940210000003" blue="1" alpha="0.70176048800000002" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="widthOneCycle" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUo-Va-0O7" userLabel="Water2" customClass="MJWaterView">
@@ -59,11 +60,12 @@
                                         <color key="value" red="0.0" green="0.99143940210000003" blue="1" alpha="0.70176048800000002" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="earlyCycle">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="speed">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="widthOneCycle" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTh-Gu-iHp" customClass="MJWaterView">
@@ -74,10 +76,10 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="topSpace">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cycle">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.0" green="0.99143940210000003" blue="1" alpha="0.70176048800000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,6 +90,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="speed">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="widthOneCycle" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WuR-t6-7ie" customClass="MJWaterView">
@@ -98,20 +101,21 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="topSpace">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cycle">
-                                        <real key="value" value="1.2"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.0" green="0.99143940210000003" blue="1" alpha="0.70176048800000002" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="earlyCycle">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="speed">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="widthOneCycle" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -120,7 +124,7 @@
                             <constraint firstItem="WuR-t6-7ie" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="8aL-M7-pTJ"/>
                             <constraint firstItem="WuR-t6-7ie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ij8-Sg-8Qa"/>
                             <constraint firstItem="KUo-Va-0O7" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.75" id="Lpy-Di-sRz"/>
-                            <constraint firstItem="83h-DZ-Z9b" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="P2j-x9-MrY"/>
+                            <constraint firstItem="83h-DZ-Z9b" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.75" id="P2j-x9-MrY"/>
                             <constraint firstItem="WuR-t6-7ie" firstAttribute="height" secondItem="NTh-Gu-iHp" secondAttribute="height" id="SfO-BR-3q2"/>
                             <constraint firstItem="WuR-t6-7ie" firstAttribute="width" secondItem="NTh-Gu-iHp" secondAttribute="width" id="YRl-YC-JQE"/>
                             <constraint firstItem="NTh-Gu-iHp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="YXX-DH-mP4"/>
